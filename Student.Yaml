@@ -1,0 +1,10 @@
+- name: SivaKumar
+  lastname: M
+  email: info@joindevops.com
+  - type: Perm
+    Doorno: 143
+    Street: GandhiNagar
+
+    - type: Current
+      Doorno: 143
+      Street: GandhiNagar

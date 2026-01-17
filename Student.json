@@ -1,0 +1,17 @@
+{
+    "FirstName": "SivaKumar",
+    "LastNmae": "M",
+    "DOB": "1992-08025",
+    "Address": [
+        {
+            "type":"Perm",
+            "DoorNo":"143",
+            "Street":"GandhiNagar",
+        },
+        {
+            "type":"Current",
+            "DoorNo":"143",
+            "Street":"GandhiNagar",
+        }
+    ]
+}
