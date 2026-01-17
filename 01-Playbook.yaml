@@ -1,5 +1,5 @@
 - name: ping the server
-  hosts: Front End
+  hosts: FrontEnd
   tasks: # List of tasks
   - name: ping the server
     anible.builtin.ping:
