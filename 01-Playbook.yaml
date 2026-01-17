@@ -1,0 +1,6 @@
+- name: ping the server
+  hosts: Frontend
+  tasks: # List of tasks
+  - name: ping the server
+    anible.builtin.ping # Module
+
