@@ -1,0 +1,15 @@
+<Student>
+    <FirstName>SivaKumar</FirstName>
+    <LastName>M</LastName>
+    <DOB>1992-08-25</DOB>
+    <Address>
+        <PermeneantAddress>
+        <DoorNo>143</DoorNo>
+        <Street>GandhiNagar</Street>
+        </PermeneantAddress>
+        <CurrentAddress>
+        <DoorNo>143</DoorNo>
+        <Street>GandhiNagar</Street>
+        </CurrentAddressAddress>
+    </Address>
+</student>
