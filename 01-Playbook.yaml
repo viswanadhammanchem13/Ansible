@@ -1,6 +1,7 @@
 - name: ping the server
   # hosts: FrontEnd
   hosts: local
+  connection: local
   become: yes
   tasks: # List of tasks
   - name: ping the server
