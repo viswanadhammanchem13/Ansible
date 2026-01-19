@@ -1,4 +1,4 @@
-- name: Invemtory Variables on Host Level
+- name: Inventory Variables on Host Level
   hosts: FrontEnd
   tasks:
   - name: Printing Course Information
