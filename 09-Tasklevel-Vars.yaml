@@ -7,6 +7,7 @@
     TRAINER: Siva Kumar
   tasks:
   - name: Printing Course Information
+    # Task Level Vars
     vars:
       COURSE: DevSecOPS with AWS
       DURATION: 120 HR
