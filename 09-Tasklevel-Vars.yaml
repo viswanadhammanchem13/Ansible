@@ -1,0 +1,19 @@
+- name: Task Lavel vars
+  hosts: loca
+  connection: local
+  vars:
+    COURSE: Ansible
+    DURATION: 10 HR
+    TRAINER: Siva Kumar
+  tasks:
+  - name: Printing Course Information
+    vars:
+      COURSE: DevSecOPS with AWS
+      DURATION: 120 HR
+      TRAINER: Siva Kumar
+    ansible.builtin.debug:
+      msg: "Hello {{ COURSE }},Duration is:{{ DURATION }}, Trainer Name is:{{ TRAINER }}. " 
+
+  - name: Printing Course Information Again.
+    ansible.builtin.debug:
+      msg: "Hello {{ COURSE }},Duration is:{{ DURATION }}, Trainer Name is:{{ TRAINER }}. " 
