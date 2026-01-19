@@ -16,9 +16,9 @@
     ansible.builtin.debug:
       msg: "{{ GREETING }}"
 
-      # 1. Command Line or Args
+      #1. Command Line or Args
       #2. Task Level
       #3. File Level
       #4. Prompt Level
       #5. Play Level
-      #6.
+      #6. Inventory
