@@ -1,0 +1,7 @@
+- name: Inventory Vars(Grop Level)
+  hosts: local
+  connection: local
+  tasks:
+  - name: printing course Information
+    ansible.builtin.debug:
+      msg: "Hello {{ COURSE }},Duration is:{{ DURATION }}, Trainer Name is:{{ TRAINER }}. " 
