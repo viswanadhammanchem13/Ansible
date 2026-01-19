@@ -1,0 +1,14 @@
+- name: Istalling MongoDB
+  hosts: FrontEnd
+  become: yes
+  tsaks:
+  - name: Install MongoDB
+    ansible.builtin.package:
+      name: mongodb
+      state: present
+
+  - name: service start
+    ansible.builtin.service:
+      name: mongodb
+      state: started
+      enabled: yes
