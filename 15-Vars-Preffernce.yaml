@@ -6,9 +6,9 @@
   # vars_files: # Vars Declare from File
   # - course.yaml
   vars_prompt: # Vars Declare from Prompt
-  - name: GREETING
-    prompt: Please enter the greeting
-    private: false
+  # - name: GREETING
+  #   prompt: Please enter the greeting
+  #   private: false
   tasks:
   - name: print the greeting
     # vars: # Vars Declare from Task
