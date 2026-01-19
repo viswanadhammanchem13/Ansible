@@ -1,14 +1,14 @@
-- name: Istalling MongoDB
+- name: Istalling NodeJS
   hosts: FrontEnd
   become: yes
   tasks:
-  - name: Install MongoDB
+  - name: Install NodeJS
     ansible.builtin.package:
-      name: mongodb
+      name: nodejs
       state: present
 
-  - name: service start
-    ansible.builtin.service:
-      name: mongodb
-      state: started
-      enabled: yes
+  # - name: service start
+  #   ansible.builtin.service:
+  #     name: mongodb
+  #     state: started
+  #     enabled: yes
