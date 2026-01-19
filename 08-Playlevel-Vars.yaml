@@ -1,0 +1,7 @@
+- name: Play Level Variables
+  hosts: local
+  connection: local
+  taks:
+  - name: Print Course Information
+    ansible.builtin.debug:
+      msg: "Hello Ansible, Course Duration: 10 HR, Trainer is SivaKumar"
