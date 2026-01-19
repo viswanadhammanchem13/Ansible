@@ -11,7 +11,10 @@
     private: false
   tasks:
   - name: print the greeting
-    vars: # Vars Declare from Task
-      GREETING: "Hello from Task"
+    # vars: # Vars Declare from Task
+    #   GREETING: "Hello from Task"
     ansible.builtin.debug:
       msg: "{{ GREETING }}"
+
+      # 1. Command Line or Args
+      #2. Task Level
