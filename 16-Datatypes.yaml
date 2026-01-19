@@ -2,7 +2,7 @@
   hosts: local
   connection: local
   vars:
-    DURATION: 120
+    DURATION: 120 HR
     COURSE: "DevSecOps with AWS"
     IS_LIVE: true
     TOOLS:
