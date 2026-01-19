@@ -8,4 +8,4 @@
   tasks:
   - name: Print Course Information
     ansible.builtin.debug:
-      msg: "Hello {{ COURSE }}, Course Duration is: {{ DURATION }, Trainer Name is:{{ TRAINER }}"
+      msg: "Hello {{ COURSE }}, Course Duration is: {{ DURATION }}, Trainer Name is:{{ TRAINER }}"
