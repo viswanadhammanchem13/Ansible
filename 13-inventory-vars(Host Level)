@@ -1,0 +1,7 @@
+- name: Invemtory Variables on Host Level
+  hosts: FrontEnd
+  tasks:
+  - name: Printing Course Information
+    ansible.builtin.debug:
+      msg: "Hello {{ COURSE }},Duration is:{{ DURATION }}, Trainer Name is:{{ TRAINER }}. " 
+
