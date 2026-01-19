@@ -1,7 +1,7 @@
 - name: Istalling MongoDB
   hosts: FrontEnd
   become: yes
-  tsaks:
+  tasks:
   - name: Install MongoDB
     ansible.builtin.package:
       name: mongodb
