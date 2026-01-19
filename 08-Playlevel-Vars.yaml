@@ -10,3 +10,8 @@
     ansible.builtin.debug:
     # Var Reffernce should be enclosed with Double Quotes " "
       msg: "Hello {{ COURSE }}, Course Duration is: {{ DURATION }}, Trainer Name is:{{ TRAINER }}"
+
+  - name: Print Course Information again
+    ansible.builtin.debug:
+    # Var Reffernce should be enclosed with Double Quotes " "
+      msg: "Hello {{ COURSE }}, Course Duration is: {{ DURATION }}, Trainer Name is:{{ TRAINER }}"
