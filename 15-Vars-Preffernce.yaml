@@ -14,4 +14,4 @@
     vars:
       GREETING: "Hello from Task"
     ansible.builtin.debug:
-      msg: {{ GREETING }}
+      msg: "{{ GREETING }}"
