@@ -8,4 +8,5 @@
   tasks:
   - name: Print Course Information
     ansible.builtin.debug:
+    # Var Reffernce should be enclosed with Double Quotes " "
       msg: "Hello {{ COURSE }}, Course Duration is: {{ DURATION }}, Trainer Name is:{{ TRAINER }}"
