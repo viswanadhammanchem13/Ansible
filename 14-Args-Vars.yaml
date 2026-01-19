@@ -1,4 +1,4 @@
-- name: File Vars
+- name: Args Vars
   hosts: local
   connection: local
   tasks:
