@@ -3,8 +3,8 @@
   connection: local
   vars: # Vars Declare from Play
     GREETING: "Hello from Play"
-  vars_files: # Vars Declare from File
-  - course.yaml
+  # vars_files: # Vars Declare from File
+  # - course.yaml
   vars_prompt: # Vars Declare from Prompt
   - name: GREETING
     prompt: Please enter the greeting
@@ -18,3 +18,4 @@
 
       # 1. Command Line or Args
       #2. Task Level
+      #3. File Level
