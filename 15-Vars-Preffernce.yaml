@@ -1,8 +1,8 @@
 - name: Vars Preffernce
   hosts: local
   connection: local
-  vars: # Vars Declare from Play
-    GREETING: "Hello from Play"
+  # vars: # Vars Declare from Play
+  #   GREETING: "Hello from Play"
   # vars_files: # Vars Declare from File
   # - course.yaml
   vars_prompt: # Vars Declare from Prompt
@@ -20,3 +20,5 @@
       #2. Task Level
       #3. File Level
       #4. Prompt Level
+      #5. Play Level
+      #6.
