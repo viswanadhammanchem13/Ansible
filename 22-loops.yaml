@@ -1,0 +1,12 @@
+- name: install and removing Packages
+  hosts: FrontEnd
+  become: yes
+  tasks:
+  - name: install and removing packages
+    ansible.builtin.debug:
+      name: "{{ item.name }}"
+      state: "{{ item.state }}"
+    loop:
+    - { name: 'nginx', state: 'present'}
+    - { name: 'mysql', state: 'latest'}
+    - { name: 'zip', state: 'absent'}
