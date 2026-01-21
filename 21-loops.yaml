@@ -2,7 +2,7 @@
   hosts: FrontEnd
   become: yes
   tasks:
-  - name: install packahes
+  - name: install "{{ item }}"
     ansible.builtin.package:
       name: "{{ item }}"
       state: installed
