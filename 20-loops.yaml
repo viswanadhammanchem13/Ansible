@@ -1,0 +1,12 @@
+- name: loops
+  hosts: local
+  connection: local
+  tasks:
+  - name: Print Names
+    ansible.builtin.debug:
+      msg: "Hello, {{ item }}" # Here item is a reserved Keyword to reffer the loops
+    loop:
+    - Suresh
+    - Ramesh
+    - Joseph
+    - Raheem
