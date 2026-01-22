@@ -1,7 +1,13 @@
 - name: functions take default vaule
   hosts: local
   connection: local
+  vars:
+    persons: "Ramesh, Suresh, Raheem, Joseph"
   tasks:
   - name: check undefined variable
     ansible.builtin.debug:
       msg: "Hello, {{ person | default('Ramesh') }}"
+
+  - name: print Names
+    ansible.builtin.debug:
+      msg: "Hello, {{ persons }}"
