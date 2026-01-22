@@ -1,0 +1,10 @@
+- name: Shell vs Command
+  hosts: FrontEnd
+  tasks:
+  - name: redirect ls output to a file
+    ansible.builtin.debug:
+    register: Command_result
+
+  - name: Print the out Come
+    ansible.builtin.debug:
+      msg: "{{ Command_result }}"
