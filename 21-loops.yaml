@@ -1,21 +1,20 @@
 - name: Install Packages
   hosts: FrontEnd
   become: yes
+  vars:
+    packages:
+    - mysql
+    - nginx
+    - zip
+    - nodejs
   tasks:
   - name: want to know which package is installing
     ansible.builtin.debug:
       msg: "Installing {{ item }}"
-    loop:
-    - mysql
-    - nginx
-    - zip
-
+    loop: "{{ packages }}"
 
   - name: install package
     ansible.builtin.package:
       name: "{{ item }}"
       state: installed
-    loop:
-    - mysql
-    - nginx
-    - zip
+    loop: "{{ packages }}"
