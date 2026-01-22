@@ -16,4 +16,4 @@
 # Transforming Strings into List
   - name: Transforming Strings into List
     ansible.builtin.debug:
-      msg: "Hello, {{ persons | split(,)}}" 
+      msg: "Hello, {{ persons | split(',')}}" 
