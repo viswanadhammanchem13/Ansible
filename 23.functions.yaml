@@ -8,6 +8,12 @@
     ansible.builtin.debug:
       msg: "Hello, {{ person | default('Ramesh') }}"
 
+# Printing Strings
   - name: print Names
     ansible.builtin.debug:
       msg: "Hello, {{ persons }}"
+
+# Transforming Strings into List
+  - name: Transforming Strings into List
+    ansible.builtin.debug:
+      msg: "Hello, {{ persons | split(,)}}" 
