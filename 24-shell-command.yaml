@@ -2,7 +2,7 @@
   hosts: FrontEnd
   tasks:
   - name: redirect ls output to a file
-    ansible.builtin.debug:
+    ansible.builtin.command:
     register: Command_result
 
   - name: Print the out Come
