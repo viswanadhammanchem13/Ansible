@@ -2,6 +2,9 @@
   hosts: FrontEnd
   become: yes
   tasks:
+  - name: want to know which package is installing
+    ansible.builtin.debug:
+      msg: "Installing {{ item }}"
   - name: install package
     ansible.builtin.package:
       name: "{{ item }}"
