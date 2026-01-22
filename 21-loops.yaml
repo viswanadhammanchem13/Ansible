@@ -2,19 +2,23 @@
   hosts: FrontEnd
   become: yes
   vars:
-    packages:
-    - mysql
-    - nginx
-    - zip
-    - nodejs
+    # packages:
+    # - mysql
+    # - nginx
+    # - zip
+    # - nodejs
   tasks:
-  - name: want to know which package is installing
-    ansible.builtin.debug:
-      msg: "Installing {{ item }}"
-    loop: "{{ packages }}"
+  # - name: want to know which package is installing
+  #   ansible.builtin.debug:
+  #     msg: "Installing {{ item }}"
+  #   loop: "{{ packages }}"
 
   - name: install package
     ansible.builtin.package:
       name: "{{ item }}"
       state: installed
-    loop: "{{ packages }}"
+    loop:
+    - mysql
+    - nginx
+    - zip
+    # loop: "{{ packages }}"
