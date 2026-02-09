@@ -2,5 +2,5 @@
   hosts: local
   connection: local
   taks:
-    name: check robo user is created or not.
+  - name: check robo user is created or not.
     ansible.builtin.command: id roboshop
