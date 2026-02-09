@@ -8,10 +8,11 @@
     register: user_output
 
   - name: creating roboshop user
+    become: yes
     ansible.builtin.command: useradd roboshop
     when: user_outpu.rc != 0
 
-  - name: User is created
+  - name: User already created
     ansible.builtin.debug:
-      msg: "Already created: {{ user_output}}
+      msg: "User is Already created: {{ user_output}}"
     when: user_output.rc == 0
