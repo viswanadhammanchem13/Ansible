@@ -4,3 +4,13 @@
   tasks:
   - name: check roboshop user is created or not.
     ansible.builtin.command: id roboshop
+    ignore_errors: true
+    register: user_output
+
+  - name: creating roboshop user
+    ansible.builtin.command: useradd roboshop
+    when: user_outpu.rc !=0
+
+  - name: User is created
+    ansible.builtin.debug:
+      msg: "Already created: { when: user_output.rc==0
