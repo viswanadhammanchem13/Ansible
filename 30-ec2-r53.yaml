@@ -13,16 +13,16 @@
   tasks:
   - name: Creating EC2 instances
     amazon.aws.ec2_instance:
+      instance_id: "{{ ami_id }}"
       name: "{{ item }}"
+      instance_type: t3.micro
       vpc_subnet_id: "{{ subnet_id }}"
       security_group: 
       - "{{ sg_id }}"
-      instance_id: "{{ ami_id }}"
-      instance_type: t3.micro
-      state: running
-      region: us-east-1
+      # state: running
+      # region: us-east-1
       tags:
-      Environment: "{{ item }}"
+        Environment: "{{ item }}"
     loop: "{{ instances }}" 
 
   # - name: Creating R53 records
