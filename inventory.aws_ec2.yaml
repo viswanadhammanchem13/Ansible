@@ -5,6 +5,10 @@ filters:
   # This selects only running instances with tag `Environment` tag set to `dev`.
   tag:Name: frontend
   instance-state-name : running
+keyed_groups:
+- key: fronend
+  prefix: ""
+  separator: ""
 hostnames:
   # You can also specify a list in order of precedence for hostname variables.
   # - ip-address
