@@ -9,7 +9,6 @@
     subnet_id: subnet-01a02b78f81c9054c
     sg_id: sg-0072bcf681e3ecca6
     
-
   tasks:
   - name: Creating EC2 instances
     amazon.aws.ec2_instance:
@@ -17,10 +16,9 @@
       name: "{{ item }}"
       instance_type: t3.micro
       vpc_subnet_id: "{{ subnet_id }}"
-      security_group: 
-      - "{{ sg_id }}"
-      state: running
-      region: us-east-1
+      security_group: "{{ sg_id }}"
+      # state: running
+      # region: us-east-1
       tags:
         Environment: "{{ item }}"
     loop: "{{ instances }}" 
