@@ -6,7 +6,7 @@ filters:
   tag:Name: frontend
   instance-state-name : running
 keyed_groups:
-- key: fronend
+- key: frontend
   prefix: ""
   separator: ""
 hostnames:
