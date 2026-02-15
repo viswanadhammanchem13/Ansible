@@ -1,0 +1,33 @@
+- name: Creating EC2 and R53 Instances
+  hosts: local
+  connection: local
+  vars:
+    instances:
+    - frontend
+    - backend
+    - mysql
+    subnet_id: subnet-01a02b78f81c9054c
+    sg_id: sg-0072bcf681e3ecca6
+    ami_id: ami-0220d79f3f480ecf5
+
+  tasks:
+  - name: Creating EC2 instances
+    amazon.aws.ec2_instance:
+      name: "{{ item }}"
+      vpc_subnet_id: "{{ subnet_id}}"
+      security_group: "{{ sg_id }}"
+      instance_id: "{{ ami_id }}"
+      instance: t3.micro
+      tags:
+      Environment: "{{ item }}"
+    loop: "{{ instances }}" 
+
+  # - name: Creating R53 records
+  # amazon.aws.route53:
+  #   state: present
+  #   zone: us-east-1
+  #   record: new.foo.com
+  #   type: A
+  #   ttl: 1
+  #   value: 1.1.1.1,2.2.2.2,3.3.3.3
+  #   wait: true
