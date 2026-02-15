@@ -14,10 +14,11 @@
   - name: Creating EC2 instances
     amazon.aws.ec2_instance:
       name: "{{ item }}"
-      vpc_subnet_id: "{{ subnet_id}}"
+      vpc_subnet_id: "{{ subnet_id }}"
       security_group: "{{ sg_id }}"
       instance_id: "{{ ami_id }}"
       instance: t3.micro
+      state: running
       tags:
       Environment: "{{ item }}"
     loop: "{{ instances }}" 
