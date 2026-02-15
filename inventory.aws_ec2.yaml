@@ -7,9 +7,9 @@ filters:
   instance-state-name : running
 hostnames:
   # You can also specify a list in order of precedence for hostname variables.
-  - ip-address
-  - dns-name
-  - tag:Name
+  # - ip-address
+  # - dns-name
+  # - tag:Name
   - private-ip-address
 compose:
   # This sets the `ansible_host` variable to connect with the private IP address without changing the hostname.
