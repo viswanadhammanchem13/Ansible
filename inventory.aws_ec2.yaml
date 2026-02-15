@@ -3,8 +3,8 @@ region:
 - us-east-1
 keyed_groups:
 - key: tags.Name
-  prefix: ""
-  separator: ""
+  prefix: "dynamic" #dynamic_frontend
+  separator: "_"
 filters:
   # This selects only running instances with tag `Environment` tag set to `dev`.
   tag:Name: frontend
