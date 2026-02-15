@@ -8,12 +8,12 @@
     - mysql
     subnet_id: subnet-01a02b78f81c9054c
     sg_id: sg-0072bcf681e3ecca6
-    ami_id: ami-0220d79f3f480ecf5
+    image_id: ami-0220d79f3f480ecf5
 
   tasks:
   - name: Creating EC2 instances
     amazon.aws.ec2_instance:
-      instance_id: "{{ ami_id }}"
+      instance_id: "{{ image_id }}"
       name: "{{ item }}"
       instance_type: t3.micro
       vpc_subnet_id: "{{ subnet_id }}"
