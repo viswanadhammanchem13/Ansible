@@ -19,8 +19,8 @@
       vpc_subnet_id: "{{ subnet_id }}"
       security_group: 
       - "{{ sg_id }}"
-      # state: running
-      # region: us-east-1
+      state: running
+      region: us-east-1
       tags:
         Environment: "{{ item }}"
     loop: "{{ instances }}" 
