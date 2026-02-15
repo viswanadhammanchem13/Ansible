@@ -22,11 +22,11 @@
       tags:
         Environment: "{{ item }}"
     loop: "{{ instances }}"
-    register: ec2.output
+    register: ec2-output
 
-  - name: EC2 Outout
+  - name: EC2 Output
     ansible.builtin.debug:
-      msg: "{{ ec2.output }}" 
+      msg: "{{ ec2-output }}" 
 
   # - name: Creating R53 records
   # amazon.aws.route53:
