@@ -19,6 +19,7 @@
       instance_id: "{{ ami_id }}"
       instance: t3.micro
       state: running
+      region: us-east-1
       tags:
       Environment: "{{ item }}"
     loop: "{{ instances }}" 
