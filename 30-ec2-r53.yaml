@@ -8,6 +8,7 @@
     - mysql
     subnet_id: subnet-01a02b78f81c9054c
     sg_id: sg-0072bcf681e3ecca6
+    zone: manchem.site
     
   tasks:
   - name: Creating EC2 instances
@@ -28,12 +29,13 @@
     ansible.builtin.debug:
       msg: "{{ ec2_output }}" 
 
-  # - name: Creating R53 records
-  # amazon.aws.route53:
-  #   state: present
-  #   zone: us-east-1
-  #   record: new.foo.com
-  #   type: A
-  #   ttl: 1
-  #   value: 1.1.1.1,2.2.2.2,3.3.3.3
-  #   wait: true
+  - name: Creating R53 records
+  amazon.aws.route53:
+    state: present
+    zone: "{{ zone }}"
+    record: "{{item.item }}.{{ zone }}"
+    type: A
+    ttl: 1
+    value: "{{ item.instances[0].private_ip_address }}"
+    wait: true
+  loop: "{{ ec2_oupt.results }}"
