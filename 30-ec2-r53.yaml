@@ -30,12 +30,12 @@
       msg: "{{ ec2_output }}" 
 
   - name: Creating R53 records
-  amazon.aws.route53:
-    state: present
-    zone: "{{ zone }}"
-    record: "{{item.item }}.{{ zone }}"
-    type: A
-    ttl: 1
-    value: "{{ item.instances[0].private_ip_address }}"
-    wait: true
-  loop: "{{ ec2_oupt.results }}"
+    amazon.aws.route53:
+      state: present
+      zone: "{{ zone }}"
+      record: "{{item.item }}.{{ zone }}"
+      type: A
+      ttl: 1
+      value: "{{ item.instances[0].private_ip_address }}"
+      wait: true
+    loop: "{{ ec2_oupt.results }}"
