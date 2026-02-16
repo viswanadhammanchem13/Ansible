@@ -38,4 +38,4 @@
       ttl: 1
       value: "{{ item.instances[0].private_ip_address }}"
       wait: true
-    loop: "{{ ec2_oupt.results }}"
+    loop: "{{ ec2_outpt.results }}"
