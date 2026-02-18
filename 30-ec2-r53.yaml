@@ -55,17 +55,17 @@
     loop: "{{ ec2_output.results }}"
     when: item.item == "frontend"
 
-  # # --------------------------------------------------
-  # # 1️⃣ Gather EC2 info first
-  # # --------------------------------------------------
-  # - name: Get instance info
-  #   amazon.aws.ec2_instance_info:
-  #     region: "{{ region }}"
-  #     filters:
-  #       "tag:Name": "{{ item }}"
-  #       instance-state-name: running
-  #   loop: "{{ instances }}"
-  #   register: ec2_info
+  # --------------------------------------------------
+  # 1️⃣ Gather EC2 info first
+  # --------------------------------------------------
+  - name: Get instance info
+    amazon.aws.ec2_instance_info:
+      region: "{{ region }}"
+      filters:
+        "tag:Name": "{{ item }}"
+        instance-state-name: running
+    loop: "{{ instances }}"
+    register: ec2_info
 
   # --------------------------------------------------
   # 2️⃣ Delete Route53 private records
