@@ -66,6 +66,8 @@
         instance-state-name: running
     loop: "{{ instances }}"
     register: ec2_info
+    tags:
+    - EC2_info
 
   # --------------------------------------------------
   # 2️⃣ Delete Route53 private records
