@@ -40,7 +40,7 @@
       wait: true
       overwrite: true
     loop: "{{ ec2_output.results }}"
-    when: item.item !== "frontend"
+    when: item.item != "frontend"
 
   - name: Creating R53 records
     amazon.aws.route53:
