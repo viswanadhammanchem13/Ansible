@@ -54,3 +54,69 @@
       overwrite: true
     loop: "{{ ec2_output.results }}"
     when: item.item == "frontend"
+
+  # # --------------------------------------------------
+  # # 1️⃣ Gather EC2 info first
+  # # --------------------------------------------------
+  # - name: Get instance info
+  #   amazon.aws.ec2_instance_info:
+  #     region: "{{ region }}"
+  #     filters:
+  #       "tag:Name": "{{ item }}"
+  #       instance-state-name: running
+  #   loop: "{{ instances }}"
+  #   register: ec2_info
+
+  # --------------------------------------------------
+  # 2️⃣ Delete Route53 private records
+  # --------------------------------------------------
+
+  - name: Delete private DNS records
+    amazon.aws.route53:
+      state: absent
+      zone: "{{ zone }}"
+      record: "{{ item.item }}.{{ zone }}"
+      type: A
+      ttl: 60
+      value: "{{ item.instances[0].private_ip_address }}"
+      overwrite: true
+    loop: "{{ ec2_info.results }}"
+    when:
+      - item.instances | length > 0
+      - item.item != "frontend"
+    tags:
+    - Deleting Private DNS
+
+  # --------------------------------------------------
+  # 3️⃣ Delete frontend public record
+  # --------------------------------------------------
+  - name: Delete frontend public DNS
+    amazon.aws.route53:
+      state: absent
+      zone: "{{ zone }}"
+      record: "{{ zone }}"
+      type: A
+      ttl: 60
+      value: "{{ item.instances[0].public_ip_address }}"
+      overwrite: true
+    loop: "{{ ec2_info.results }}"
+    when:
+      - item.instances | length > 0
+      - item.item == "frontend"
+    tags:
+    - Deleting Public DNS
+    
+
+  # --------------------------------------------------
+  # 4️⃣ Terminate EC2 instances
+  # --------------------------------------------------
+  - name: Terminate EC2 instances
+    amazon.aws.ec2_instance:
+      instance_ids: "{{ item.instances[0].instance_id }}"
+      region: "{{ region }}"
+      state: absent
+      wait: yes
+    loop: "{{ ec2_info.results }}"
+    when: item.instances | length > 0
+    tags:
+    - Deleting EC2 Instances
