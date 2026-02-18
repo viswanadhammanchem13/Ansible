@@ -85,7 +85,7 @@
       - item.instances | length > 0
       - item.item != "frontend"
     tags:
-    - Deleting Private DNS
+    - DeletingPrivateDNS
 
   # --------------------------------------------------
   # 3️⃣ Delete frontend public record
@@ -104,7 +104,7 @@
       - item.instances | length > 0
       - item.item == "frontend"
     tags:
-    - Deleting Public DNS
+    - DeletingPublicDNS
     
 
   # --------------------------------------------------
@@ -119,4 +119,4 @@
     loop: "{{ ec2_info.results }}"
     when: item.instances | length > 0
     tags:
-    - Deleting EC2 Instances
+    - DeletingEC2Instances
