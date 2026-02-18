@@ -60,7 +60,7 @@
   # --------------------------------------------------
   - name: Get instance info
     amazon.aws.ec2_instance_info:
-      region: "{{ region }}"
+      # region: "{{ region }}"
       filters:
         "tag:Name": "{{ item }}"
         instance-state-name: running
@@ -115,7 +115,7 @@
   - name: Terminate EC2 instances
     amazon.aws.ec2_instance:
       instance_ids: "{{ item.instances[0].instance_id }}"
-      region: "{{ region }}"
+      # region: "{{ region }}"
       state: absent
       wait: yes
     loop: "{{ ec2_info.results }}"
