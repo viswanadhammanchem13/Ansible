@@ -1,0 +1,8 @@
+- name: Create Regular File
+  hosts: local
+  connection: local
+  tasks:
+  - name: Creating file
+    ansible.builtin.file:
+      path: /home/ec2-user/manchem/file.txt
+      state: touch
