@@ -1,5 +1,5 @@
 - name: Creating Soft Link
-  host: local
+  hosts: local
   connection: local
   tasks:
   - name: Create a symbolic link
