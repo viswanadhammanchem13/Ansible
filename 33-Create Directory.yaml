@@ -1,0 +1,8 @@
+- name: Create Directory
+  hosts: local
+  connection: local
+  tasks:
+  - name: Create a Directory
+    ansible.builtin.debug:
+      path: /home/ec2-user/manchem
+      state: directory
