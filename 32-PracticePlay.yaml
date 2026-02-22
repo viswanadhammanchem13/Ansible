@@ -1,0 +1,10 @@
+- name: PracticePlay
+  hosts: local
+  connection: local
+  tasks:
+  - name: Ping My hosts
+    ansible.builtin.ping:
+
+  - name: Print message
+    ansible.builtin.debug:
+      msg: "Hello World form Task2"
