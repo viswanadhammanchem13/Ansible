@@ -3,6 +3,6 @@
   connection: local
   tasks:
   - name: Create a Directory
-    ansible.builtin.debug:
+    ansible.builtin.file:
       path: /home/ec2-user/manchem
       state: directory
