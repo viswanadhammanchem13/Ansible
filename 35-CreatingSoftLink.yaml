@@ -1,0 +1,9 @@
+- name: Creating Soft Link
+  host: local
+  connection: local
+  taks:
+  - name: Create a symbolic link
+    ansible.builtin.file:
+      src: /home/ec2-user/manchem/file.txt
+      dest: /home/ec2-user/manchem/file.txt
+      state: link
