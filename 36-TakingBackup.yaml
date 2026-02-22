@@ -6,4 +6,4 @@
   - name: Creating a Directory
     ansible.builtin.file:
       path: /tmp/backup
-      state: present
+      state: directory
