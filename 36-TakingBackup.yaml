@@ -7,3 +7,7 @@
     ansible.builtin.file:
       path: /tmp/backup
       state: directory
+  - name: Taking Backup of a file
+    ansible.builtin.archive:
+      path:  tar cvf /home/ec2-user/manchem/file.txt
+      dest: /tmp/backup
